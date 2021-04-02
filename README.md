@@ -7,8 +7,8 @@ create env vars :
 
 ### setup: 
 ```bash
-git clone "https://github.com/wikyprash/projectInitializerAutomation.git"
-cd projectInitializerAutomation
+git clone "https://github.com/ShivamSharmaDeveloper/Github_Automation.git"
+cd Github_Automation
 pip install -r requirements.txt
 
 path:
