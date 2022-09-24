@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import clipboard
 import time
 import os
@@ -16,26 +17,26 @@ _dir = path + '/' + foldername
 driver = webdriver.Chrome() # Paste your Chrome driver into python folder
 driver.get('https://github.com/login')
 
-user = driver.find_element_by_id('login_field')
+user = driver.find_element(By.ID, 'login_field')
 user.send_keys(email)
 
-user = driver.find_element_by_id('password')
+user = driver.find_element(By.ID, 'password')
 user.send_keys(password)
 
-sign = driver.find_element_by_xpath('/html/body/div[3]/main/div/div[4]/form/div/input[12]')
+sign = driver.find_element("xpath", '//*[@id="login"]/div[4]/form/div/input[12]')
 sign.submit()
 
-time.sleep(2)
+time.sleep(3)
 
-new = driver.find_element_by_xpath('/html/body/div[4]/div/aside/div[2]/div[1]/div/h2/a')
+new = driver.find_element("xpath", '/html/body/div[5]/div/aside/div/div[1]/div/h2/a')
 new.click()
 
 time.sleep(4)
 
-new = driver.find_element_by_xpath('/html/body/div[4]/main/div/form/div[2]/auto-check/dl/dd/input')
+new = driver.find_element("xpath", '//*[@id="repository_name"]')
 new.send_keys(foldername)
 
-create = driver.find_element_by_xpath('/html/body/div[4]/main/div/form/div[4]/button')
+create = driver.find_element("xpath", '//*[@id="new_repository"]/div[5]/button')
 create.submit()
 
 time.sleep(4)
@@ -43,7 +44,7 @@ time.sleep(4)
 #clone = driver.find_element_by_xpath('/html/body/div[4]/div/main/div[2]/div/git-clone-help/div[1]/div/div[3]/div/form[2]/button')
 #clone.click() # Unhash this if you r using SSH 
 
-copy = driver.find_element_by_xpath('/html/body/div[4]/div/main/div[2]/div/git-clone-help/div[1]/div/div[4]/div/span/span/clipboard-copy')
+copy = driver.find_element("xpath", '//*[@id="repo-content-pjax-container"]/div/git-clone-help/div[1]/div/div[4]/div/span/span/clipboard-copy')
 copy.click()
 
 git_url = clipboard.paste()
