@@ -6,6 +6,7 @@ import time
 import os
 import sys
 import getpass
+from webdriver_manager.chrome import ChromeDriverManager
 
 email = input("Enter your email or username: ")
 password = getpass.getpass("Enter your password: ")
@@ -14,7 +15,8 @@ foldername = str(sys.argv[1])
 path = os.environ.get('Ga')  # os.path.join('C:/Users/Documents/Projects')
 _dir = path + '/' + foldername
 
-driver = webdriver.Chrome()  # Paste your Chrome driver into python folder
+# Paste your Chrome driver into python folder
+driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get('https://github.com/login')
 
 user = driver.find_element(By.ID, 'login_field')

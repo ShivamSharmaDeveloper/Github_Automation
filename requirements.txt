@@ -1,3 +1,4 @@
 pygithub
 selenium
 clipboard
+webdriver-manager

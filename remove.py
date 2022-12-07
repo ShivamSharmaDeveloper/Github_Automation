@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import os
 import getpass
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 email = input("Enter your username: ")
 password = getpass.getpass("Enter your password: ")
@@ -10,7 +12,8 @@ password = getpass.getpass("Enter your password: ")
 reponame = sys.argv[1]
 path = os.environ.get('Ga')
 
-browser = webdriver.Chrome()    # Paste your Chrome driver into python folder
+# Paste your Chrome driver into python folder
+browser = webdriver.Chrome(ChromeDriverManager().install())
 browser.get('http://github.com/login')
 
 
