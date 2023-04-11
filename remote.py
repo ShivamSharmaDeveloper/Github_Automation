@@ -28,7 +28,7 @@ sign = driver.find_element(
     "xpath", '//*[@id="login"]/div[4]/form/div/input[11]')
 sign.submit()
 
-time.sleep(3)
+time.sleep(10)
 
 new = driver.find_element(
     "xpath", '/html/body/div[1]/div[5]/div/aside/div/loading-context/div/div[1]/div/h2/a')
