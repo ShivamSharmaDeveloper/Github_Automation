@@ -31,7 +31,7 @@ sign.submit()
 time.sleep(20)
 
 new = driver.find_element(
-    "xpath", '/html/body/div[1]/div[5]/div/aside/div/loading-context/div/div[1]/div/h2/a')
+    By.CSS_SELECTOR, ('body > div.logged-in.env-production.page-responsive.full-width > div.application-main > div > aside > div > loading-context > div > div.mb-4.Details.js-repos-container.mt-5 > div > h2 > a'))
 new.click()
 
 time.sleep(4)
@@ -69,3 +69,4 @@ driver.refresh()
 print(f'{foldername} created automatically')
 os.system('code .')
 print('\n Task Completed...')
+os.system('exit')
