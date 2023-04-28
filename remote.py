@@ -39,17 +39,19 @@ time.sleep(4)
 new = driver.find_element("xpath", '//*[@id="react-aria-2"]')
 new.send_keys(foldername)
 
+time.sleep(4)
+
 create = driver.find_element(
     "xpath", '/html/body/div[1]/div[6]/main/react-app/div/div/form/div[5]/button')
 create.submit()
 
-time.sleep(4)
+time.sleep(5)
 
 #clone = driver.find_element_by_xpath('/html/body/div[4]/div/main/div[2]/div/git-clone-help/div[1]/div/div[3]/div/form[2]/button')
 # clone.click() # Unhash this if you r using SSH
 
 copy = driver.find_element(
-    "xpath", '//*[@id="repo-content-pjax-container"]/div/git-clone-help/div[1]/div/div[4]/div/span/span/clipboard-copy')
+    "xpath", '/html/body/div[1]/div[6]/div/main/turbo-frame/div/div/git-clone-help/div[1]/div/div[4]/div/span/span/clipboard-copy')
 copy.click()
 
 git_url = clipboard.paste()
