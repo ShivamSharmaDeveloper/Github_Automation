@@ -40,7 +40,7 @@ new = driver.find_element("xpath", '//*[@id="react-aria-2"]')
 new.send_keys(foldername)
 
 create = driver.find_element(
-    "xpath", '//*[@id="new_repository"]/div[5]/button')
+    "xpath", '/html/body/div[1]/div[6]/main/react-app/div/div/form/div[5]/button')
 create.submit()
 
 time.sleep(4)
